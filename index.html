@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-Bit Music Loop Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>16-Bit Music Loop Tool</h1>
+        </header>
+        
+        <div class="controls">
+            <button id="play-btn" class="control-btn">PLAY</button>
+            <button id="stop-btn" class="control-btn active">STOP</button>
+            <div class="tempo-control">
+                <label for="tempo-slider">TEMPO: <span id="tempo-value">120</span> BPM</label>
+                <input type="range" id="tempo-slider" min="60" max="180" value="120">
+            </div>
+            <button id="help-btn" class="control-btn">HELP</button>
+        </div>
+        
+        <div class="sequencer-grid">
+            <div class="instrument-row">
+                <div class="instrument-label">KICK</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="0" data-step="0"></button>
+                    <button class="step" data-row="0" data-step="1"></button>
+                    <button class="step" data-row="0" data-step="2"></button>
+                    <button class="step" data-row="0" data-step="3"></button>
+                    <button class="step" data-row="0" data-step="4"></button>
+                    <button class="step" data-row="0" data-step="5"></button>
+                    <button class="step" data-row="0" data-step="6"></button>
+                    <button class="step" data-row="0" data-step="7"></button>
+                    <button class="step" data-row="0" data-step="8"></button>
+                    <button class="step" data-row="0" data-step="9"></button>
+                    <button class="step" data-row="0" data-step="10"></button>
+                    <button class="step" data-row="0" data-step="11"></button>
+                    <button class="step" data-row="0" data-step="12"></button>
+                    <button class="step" data-row="0" data-step="13"></button>
+                    <button class="step" data-row="0" data-step="14"></button>
+                    <button class="step" data-row="0" data-step="15"></button>
+                </div>
+            </div>
+            
+            <div class="instrument-row">
+                <div class="instrument-label">SNARE</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="1" data-step="0"></button>
+                    <button class="step" data-row="1" data-step="1"></button>
+                    <button class="step" data-row="1" data-step="2"></button>
+                    <button class="step" data-row="1" data-step="3"></button>
+                    <button class="step" data-row="1" data-step="4"></button>
+                    <button class="step" data-row="1" data-step="5"></button>
+                    <button class="step" data-row="1" data-step="6"></button>
+                    <button class="step" data-row="1" data-step="7"></button>
+                    <button class="step" data-row="1" data-step="8"></button>
+                    <button class="step" data-row="1" data-step="9"></button>
+                    <button class="step" data-row="1" data-step="10"></button>
+                    <button class="step" data-row="1" data-step="11"></button>
+                    <button class="step" data-row="1" data-step="12"></button>
+                    <button class="step" data-row="1" data-step="13"></button>
+                    <button class="step" data-row="1" data-step="14"></button>
+                    <button class="step" data-row="1" data-step="15"></button>
+                </div>
+            </div>
+            
+            <div class="instrument-row">
+                <div class="instrument-label">HI-HAT</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="2" data-step="0"></button>
+                    <button class="step" data-row="2" data-step="1"></button>
+                    <button class="step" data-row="2" data-step="2"></button>
+                    <button class="step" data-row="2" data-step="3"></button>
+                    <button class="step" data-row="2" data-step="4"></button>
+                    <button class="step" data-row="2" data-step="5"></button>
+                    <button class="step" data-row="2" data-step="6"></button>
+                    <button class="step" data-row="2" data-step="7"></button>
+                    <button class="step" data-row="2" data-step="8"></button>
+                    <button class="step" data-row="2" data-step="9"></button>
+                    <button class="step" data-row="2" data-step="10"></button>
+                    <button class="step" data-row="2" data-step="11"></button>
+                    <button class="step" data-row="2" data-step="12"></button>
+                    <button class="step" data-row="2" data-step="13"></button>
+                    <button class="step" data-row="2" data-step="14"></button>
+                    <button class="step" data-row="2" data-step="15"></button>
+                </div>
+            </div>
+            
+            <div class="instrument-row">
+                <div class="instrument-label">PERC</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="3" data-step="0"></button>
+                    <button class="step" data-row="3" data-step="1"></button>
+                    <button class="step" data-row="3" data-step="2"></button>
+                    <button class="step" data-row="3" data-step="3"></button>
+                    <button class="step" data-row="3" data-step="4"></button>
+                    <button class="step" data-row="3" data-step="5"></button>
+                    <button class="step" data-row="3" data-step="6"></button>
+                    <button class="step" data-row="3" data-step="7"></button>
+                    <button class="step" data-row="3" data-step="8"></button>
+                    <button class="step" data-row="3" data-step="9"></button>
+                    <button class="step" data-row="3" data-step="10"></button>
+                    <button class="step" data-row="3" data-step="11"></button>
+                    <button class="step" data-row="3" data-step="12"></button>
+                    <button class="step" data-row="3" data-step="13"></button>
+                    <button class="step" data-row="3" data-step="14"></button>
+                    <button class="step" data-row="3" data-step="15"></button>
+                </div>
+            </div>
+            
+            <div class="instrument-row">
+                <div class="instrument-label">BASS</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="4" data-step="0"></button>
+                    <button class="step" data-row="4" data-step="1"></button>
+                    <button class="step" data-row="4" data-step="2"></button>
+                    <button class="step" data-row="4" data-step="3"></button>
+                    <button class="step" data-row="4" data-step="4"></button>
+                    <button class="step" data-row="4" data-step="5"></button>
+                    <button class="step" data-row="4" data-step="6"></button>
+                    <button class="step" data-row="4" data-step="7"></button>
+                    <button class="step" data-row="4" data-step="8"></button>
+                    <button class="step" data-row="4" data-step="9"></button>
+                    <button class="step" data-row="4" data-step="10"></button>
+                    <button class="step" data-row="4" data-step="11"></button>
+                    <button class="step" data-row="4" data-step="12"></button>
+                    <button class="step" data-row="4" data-step="13"></button>
+                    <button class="step" data-row="4" data-step="14"></button>
+                    <button class="step" data-row="4" data-step="15"></button>
+                </div>
+            </div>
+            
+            <div class="instrument-row">
+                <div class="instrument-label">LEAD</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="5" data-step="0"></button>
+                    <button class="step" data-row="5" data-step="1"></button>
+                    <button class="step" data-row="5" data-step="2"></button>
+                    <button class="step" data-row="5" data-step="3"></button>
+                    <button class="step" data-row="5" data-step="4"></button>
+                    <button class="step" data-row="5" data-step="5"></button>
+                    <button class="step" data-row="5" data-step="6"></button>
+                    <button class="step" data-row="5" data-step="7"></button>
+                    <button class="step" data-row="5" data-step="8"></button>
+                    <button class="step" data-row="5" data-step="9"></button>
+                    <button class="step" data-row="5" data-step="10"></button>
+                    <button class="step" data-row="5" data-step="11"></button>
+                    <button class="step" data-row="5" data-step="12"></button>
+                    <button class="step" data-row="5" data-step="13"></button>
+                    <button class="step" data-row="5" data-step="14"></button>
+                    <button class="step" data-row="5" data-step="15"></button>
+                </div>
+            </div>
+            
+            <div class="instrument-row">
+                <div class="instrument-label">CHORD</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="6" data-step="0"></button>
+                    <button class="step" data-row="6" data-step="1"></button>
+                    <button class="step" data-row="6" data-step="2"></button>
+                    <button class="step" data-row="6" data-step="3"></button>
+                    <button class="step" data-row="6" data-step="4"></button>
+                    <button class="step" data-row="6" data-step="5"></button>
+                    <button class="step" data-row="6" data-step="6"></button>
+                    <button class="step" data-row="6" data-step="7"></button>
+                    <button class="step" data-row="6" data-step="8"></button>
+                    <button class="step" data-row="6" data-step="9"></button>
+                    <button class="step" data-row="6" data-step="10"></button>
+                    <button class="step" data-row="6" data-step="11"></button>
+                    <button class="step" data-row="6" data-step="12"></button>
+                    <button class="step" data-row="6" data-step="13"></button>
+                    <button class="step" data-row="6" data-step="14"></button>
+                    <button class="step" data-row="6" data-step="15"></button>
+                </div>
+            </div>
+            
+            <div class="instrument-row">
+                <div class="instrument-label">EFFECT</div>
+                <div class="step-buttons">
+                    <button class="step" data-row="7" data-step="0"></button>
+                    <button class="step" data-row="7" data-step="1"></button>
+                    <button class="step" data-row="7" data-step="2"></button>
+                    <button class="step" data-row="7" data-step="3"></button>
+                    <button class="step" data-row="7" data-step="4"></button>
+                    <button class="step" data-row="7" data-step="5"></button>
+                    <button class="step" data-row="7" data-step="6"></button>
+                    <button class="step" data-row="7" data-step="7"></button>
+                    <button class="step" data-row="7" data-step="8"></button>
+                    <button class="step" data-row="7" data-step="9"></button>
+                    <button class="step" data-row="7" data-step="10"></button>
+                    <button class="step" data-row="7" data-step="11"></button>
+                    <button class="step" data-row="7" data-step="12"></button>
+                    <button class="step" data-row="7" data-step="13"></button>
+                    <button class="step" data-row="7" data-step="14"></button>
+                    <button class="step" data-row="7" data-step="15"></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="visualization">
+            <canvas id="visualizer"></canvas>
+        </div>
+        
+        <!-- Help Modal -->
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>HOW TO USE</h2>
+                    <span id="close-help" class="close-btn">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <h3>GETTING STARTED</h3>
+                    <p>Welcome to the 16-Bit Music Loop Tool! Create your own retro-style music loops with this step sequencer.</p>
+                    
+                    <h3>CONTROLS</h3>
+                    <ul>
+                        <li><strong>PLAY</strong> - Start playback of your loop</li>
+                        <li><strong>STOP</strong> - Stop playback</li>
+                        <li><strong>TEMPO</strong> - Adjust the speed (60-180 BPM)</li>
+                        <li><strong>SPACE BAR</strong> - Toggle play/stop</li>
+                    </ul>
+                    
+                    <h3>CREATING PATTERNS</h3>
+                    <p>Click on the grid buttons to activate/deactivate steps for each instrument:</p>
+                    <ul>
+                        <li><strong>KICK</strong> - Bass drum</li>
+                        <li><strong>SNARE</strong> - Snare drum</li>
+                        <li><strong>HI-HAT</strong> - Hi-hat cymbal</li>
+                        <li><strong>PERC</strong> - Additional percussion</li>
+                        <li><strong>BASS</strong> - Bass synthesizer</li>
+                        <li><strong>LEAD</strong> - Lead synthesizer</li>
+                        <li><strong>CHORD</strong> - Chord synthesizer</li>
+                        <li><strong>EFFECT</strong> - Special effects</li>
+                    </ul>
+                    
+                    <h3>VISUALIZATION</h3>
+                    <p>The waveform display shows the audio output in real-time, with a retro 16-bit style visualization.</p>
+                    
+                    <h3>TIPS</h3>
+                    <ul>
+                        <li>Start with a simple drum pattern (kick and snare)</li>
+                        <li>Add hi-hats for rhythm</li>
+                        <li>Layer in bass and lead sounds</li>
+                        <li>Use effects sparingly for accent</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 16-Bit Music Loop Tool | All Rights Reserved</p>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="libs/tone.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/sequencer.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
